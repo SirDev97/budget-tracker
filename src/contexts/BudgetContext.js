@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { v4 as uuidV4 } from 'uuid';
 import useLocalStorage from '../hooks/useLocalStorage';
 
@@ -22,7 +22,7 @@ export const BudgetsProvider = ({ children }) => {
     });
   }
 
-  function addBudget(name, max) {
+  function addBudget({ name, max }) {
     setBudgets((prevBudgets) => {
       if (prevBudgets.find((budget) => budget.name === name)) {
         return prevBudgets;
